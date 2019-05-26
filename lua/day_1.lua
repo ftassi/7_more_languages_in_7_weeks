@@ -20,6 +20,7 @@ end
 
 function primer_ending_in_3(howMany)
   local primers = {}
+
   local n = 3
   repeat
     if(is_prime(n) and ends_in_3(n)) then
@@ -27,7 +28,7 @@ function primer_ending_in_3(howMany)
     end
     n = n + 1
   until #primers == howMany
-
+  setmetatable(primers, {__tostring = table_to_string})
   return primers
 end
 
@@ -61,29 +62,25 @@ function reduce(max, init, f)
 end
 
 print('---- ends_in_3 ----')
-print('123 ends in 3')
-print(ends_in_3(123) == true)
-print('124 do not ends in 3')
-print(ends_in_3(124) == false)
+ends_in_3_cases = {}
+ends_in_3_cases['123 ends in 3'] = ends_in_3(123) == true
+ends_in_3_cases['124 do not ends in 3'] = ends_in_3(124) == false
+run_use_case(ends_in_3_cases)
+
 
 print('---- is_prime ----')
-print('1 is not prime')
-print(is_prime(1) == false)
-print('2 is prime')
-print(is_prime(2) == true)
-print('3 is prime')
-print(is_prime(3) == true)
-print('4 is not prime')
-print(is_prime(4) == false)
-print('9 is not prime')
-print(is_prime(9) == false)
-print('29 is prime')
-print(is_prime(29) == true)
-print('999863 is prime')
-print(is_prime(999863) == true)
+is_prime_cases = {}
+is_prime_cases['1 is not prime'] = is_prime(1) == false
+is_prime_cases['2 is prime'] = is_prime(2) == true
+is_prime_cases['3 is prime'] = is_prime(3) == true
+is_prime_cases['4 is not prime'] = is_prime(4) == false
+is_prime_cases['9 is not prime'] = is_prime(9) == false
+is_prime_cases['29 is prime'] = is_prime(29) == true
+is_prime_cases['999863 is prime'] = is_prime(999863) == true
+run_use_case(is_prime_cases)
 
 print('---- primer_ending_in_3 ----')
-print_table(primer_ending_in_3(5))
+print(primer_ending_in_3(5))
 
 print('---- for_loop ----')
 for_loop(1,10, print)
