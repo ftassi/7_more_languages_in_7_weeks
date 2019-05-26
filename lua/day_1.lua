@@ -1,3 +1,5 @@
+require "./util"
+
 function ends_in_3(num)
   return string.sub(num, -1) == '3'
 end
@@ -27,10 +29,6 @@ function primer_ending_in_3(howMany)
   until #primers == howMany
 
   return primers
-end
-
-function print_array(table)
-  for key,value in ipairs(table) do print(key, value) end
 end
 
 function for_loop(a, b, f)
@@ -85,7 +83,7 @@ print('999863 is prime')
 print(is_prime(999863) == true)
 
 print('---- primer_ending_in_3 ----')
-print_array(primer_ending_in_3(5))
+print_table(primer_ending_in_3(5))
 
 print('---- for_loop ----')
 for_loop(1,10, print)
