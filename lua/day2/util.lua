@@ -16,6 +16,7 @@ function print_table(t)
   for k, v in pairs(t) do
     print(k .. ': ' .. v)
   end
+  print('--table end--')
 end
 
 function table_to_string(t)
