@@ -1,0 +1,3 @@
+/Users/ftassi/workspace/learning/7_more_languages_in_7_weeks/lua/day3/a/CMakeFiles/rebuild_cache.dir
+/Users/ftassi/workspace/learning/7_more_languages_in_7_weeks/lua/day3/a/CMakeFiles/edit_cache.dir
+/Users/ftassi/workspace/learning/7_more_languages_in_7_weeks/lua/day3/a/CMakeFiles/play.dir
