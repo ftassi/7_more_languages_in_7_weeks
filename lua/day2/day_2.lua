@@ -1,5 +1,6 @@
 require('util')
 require('queue')
+require('retry')
 
 someData = {10, 20, 30}
 someOtherData = {40, 50}
@@ -39,3 +40,14 @@ print_table(myQueue)
 
 myQueue:remove()
 print_table(myQueue)
+
+math.randomseed(os.time())
+
+function randomFail()
+  local luck = math.random()
+  if luck > 0.2 then
+    coroutine.yield('Something bad happend ' .. luck)
+  end
+end
+
+retry(5, randomFail)
